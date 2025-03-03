@@ -39,7 +39,7 @@ def main():
         print(digits, "digits")
 
     except AssertionError as e:
-        sys.stderr.write("AssertionError:", e)
+        sys.stderr.write(f"AssertionError: {e}\n")
     except KeyboardInterrupt:
         sys.stderr.write("Goodbye!")
 
