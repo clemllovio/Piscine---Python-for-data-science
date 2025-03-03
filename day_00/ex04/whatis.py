@@ -17,5 +17,5 @@ try:
         raise AssertionError("more than one argument is provided")
 
 except AssertionError as e:
-    print("AssertionError:", e)
+    sys.stderr.write("AssertionError:", e)
 
