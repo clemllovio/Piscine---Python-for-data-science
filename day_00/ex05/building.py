@@ -1,8 +1,12 @@
 import sys
-from string import punctuation
 
 
 def main():
+    """
+    This script counts the number of characters, upper-case letters,
+    lower-case letters, punctuation marks, spaces, and digits in a given text.
+    """
+
     try:
         if len(sys.argv) == 2:
             str = sys.argv[1]
@@ -11,8 +15,7 @@ def main():
         elif len(sys.argv) > 2:
             raise AssertionError("more than one argument is provided")
 
-
-        punctuation = "!”#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+        punctuation = "!”#$%&'()*+,-./:;<=>?@[]^_`{|}~"
         upperLetter = 0
         lowerLetter = 0
         punctuationMarks = 0
@@ -41,6 +44,8 @@ def main():
     except AssertionError as e:
         sys.stderr.write(f"AssertionError: {e}\n")
     except KeyboardInterrupt:
+        sys.stderr.write("Goodbye!")
+    except EOFError:
         sys.stderr.write("Goodbye!")
 
 
