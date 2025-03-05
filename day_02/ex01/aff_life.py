@@ -20,11 +20,15 @@ def aff_life(dataset: pd.DataFrame):
 
 
 def main():
+    """
+    Loads a dataset containing life expectancy data and processes it.
+    """
     dataset = load("life_expectancy_years.csv")
     if dataset is None:
-        return
+        return 1
 
     aff_life(dataset)
+    return 0
 
 
 if __name__ == "__main__":
