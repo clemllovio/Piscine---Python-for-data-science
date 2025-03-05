@@ -1,7 +1,8 @@
 import cv2
+import numpy as np
 
 
-def ft_load(path: str) -> list:
+def ft_load(path: str) -> np.ndarray:
     """
     Load an image from a file and return it as a list.
     """
@@ -12,4 +13,4 @@ def ft_load(path: str) -> list:
 
     print(f"The shape of image is: {image.shape}")
 
-    return image.tolist()
+    return image

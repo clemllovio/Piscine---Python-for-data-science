@@ -18,7 +18,7 @@ def ft_transpose(image: list) -> np.ndarray:
             row.append(image[j][i])
         transposed_image.append(row)
     array_image = np.array(transposed_image)
-    print(f"New shape after slicing: {array_image.shape}")
+    print(f"New shape after Transpose: {array_image.shape}")
     return array_image
 
 
@@ -35,7 +35,6 @@ def ft_zoom(image: list) -> np.ndarray:
         raise ValueError("Image is too small for the zoom operation.")
 
     zoomed_image = image[top:bottom, left:right]
-    print(f"New shape after slicing: {zoomed_image.shape}")
     return zoomed_image
 
 
@@ -46,12 +45,15 @@ def main():
     try:
         image = ft_load("animal.jpeg")
         print(image)
-
         zoomed_image = ft_zoom(image)
-
         transposed_image = ft_transpose(zoomed_image)
-        cv2.imshow("transposed_image", transposed_image)
-        cv2.waitKey(0)
+        print(transposed_image)
+
+        cv2.imshow("rotate_me", transposed_image)
+        while cv2.getWindowProperty('rotate_me', cv2.WND_PROP_VISIBLE) >= 1:
+            keyCode = cv2.waitKey(1000)
+            if keyCode == 27:
+                break
         cv2.destroyAllWindows()
     except FileNotFoundError as e:
         print(f"Error: {e}")

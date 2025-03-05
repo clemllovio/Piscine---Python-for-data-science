@@ -3,7 +3,7 @@ import numpy as np
 import cv2
 
 
-def ft_zoom(image: list) -> np.ndarray:
+def ft_zoom(image: np.ndarray) -> np.ndarray:
     """
         Crops a central portion of the given image to create a zoom effect.
     """
@@ -28,9 +28,13 @@ def main():
         image = ft_load("animal.jpeg")
         print(image)
         zoomed_image = ft_zoom(image)
+        print(zoomed_image)
 
-        cv2.imshow("bigger", zoomed_image)
-        cv2.waitKey(0)
+        cv2.imshow("zoom_on_me", zoomed_image)
+        while cv2.getWindowProperty('zoom_on_me', cv2.WND_PROP_VISIBLE) >= 1:
+            keyCode = cv2.waitKey(1000)
+            if keyCode == 27:
+                break
         cv2.destroyAllWindows()
     except FileNotFoundError as e:
         print(f"Error: {e}")
