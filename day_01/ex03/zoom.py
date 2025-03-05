@@ -1,6 +1,6 @@
 from load_image import ft_load
 import numpy as np
-import cv2
+import matplotlib.pyplot as plt
 
 
 def ft_zoom(image: np.ndarray) -> np.ndarray:
@@ -30,12 +30,8 @@ def main():
         zoomed_image = ft_zoom(image)
         print(zoomed_image)
 
-        cv2.imshow("zoom_on_me", zoomed_image)
-        while cv2.getWindowProperty('zoom_on_me', cv2.WND_PROP_VISIBLE) >= 1:
-            keyCode = cv2.waitKey(1000)
-            if keyCode == 27:
-                break
-        cv2.destroyAllWindows()
+        plt.imshow(zoomed_image)
+        plt.show()
     except FileNotFoundError as e:
         print(f"Error: {e}")
     except ValueError as e:

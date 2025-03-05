@@ -6,6 +6,9 @@ def ft_load(path: str) -> np.ndarray:
     """
     Load an image from a file and return it as a list.
     """
+    if type(path) is not str:
+        raise ValueError(f"{path} is not a string")
+
     image = cv2.imread(path)
     if image is None:
         raise FileNotFoundError(f"File '{path}' could not be opened.")

@@ -14,4 +14,7 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     """
     Check if the BMI is above a certain limit.
     """
-    return [value > limit for value in bmi]
+    if type(limit) is not int:
+        return []
+
+    return [value > limit for value in bmi if type(value) in [int, float]]

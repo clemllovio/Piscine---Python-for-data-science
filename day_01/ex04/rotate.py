@@ -1,6 +1,6 @@
 from load_image import ft_load
 import numpy as np
-import cv2
+import matplotlib.pyplot as plt
 
 
 def ft_transpose(image: list) -> np.ndarray:
@@ -49,12 +49,8 @@ def main():
         transposed_image = ft_transpose(zoomed_image)
         print(transposed_image)
 
-        cv2.imshow("rotate_me", transposed_image)
-        while cv2.getWindowProperty('rotate_me', cv2.WND_PROP_VISIBLE) >= 1:
-            keyCode = cv2.waitKey(1000)
-            if keyCode == 27:
-                break
-        cv2.destroyAllWindows()
+        plt.imshow(transposed_image)
+        plt.show()
     except FileNotFoundError as e:
         print(f"Error: {e}")
     except ValueError as e:

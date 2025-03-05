@@ -1,3 +1,8 @@
 from load_image import ft_load
 
-print(ft_load("landscape.jpg"))
+try:
+    print(ft_load(""))
+except FileNotFoundError as e:
+    print(e)
+except ValueError as e:
+    print(e)

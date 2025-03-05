@@ -79,9 +79,7 @@ def ft_grey(array) -> np.ndarray:
 
     for i in range(height):
         for j in range(width):
-            grey_image[i][j] = int(grey_image[i][j][0] * 0.2126
-                                   + grey_image[i][j][1] * 0.7152 +
-                                   grey_image[i][j][2] * 0.0722)
+            grey_image[i][j] = int(np.mean(grey_image[i][j]))
 
     cv2.imshow("grey_image", grey_image)
     while cv2.getWindowProperty('grey_image', cv2.WND_PROP_VISIBLE) >= 1:
