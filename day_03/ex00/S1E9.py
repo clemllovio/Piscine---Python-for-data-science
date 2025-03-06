@@ -4,6 +4,11 @@ from abc import ABC, abstractmethod
 class Character(ABC):
     """Abstract base class for characters"""
     @abstractmethod
+    def __init__(self, name: str, is_alive: bool = True):
+        self.name = name
+        self.is_alive = is_alive
+
+    @abstractmethod
     def is_alive(self) -> bool:
         """Check if the character is alive"""
         pass

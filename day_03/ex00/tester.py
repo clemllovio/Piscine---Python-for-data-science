@@ -12,3 +12,8 @@ print(Ned.die.__doc__)
 print("---")
 Lyanna = Stark("Lyanna", False)
 print(Lyanna.__dict__)
+
+# try:
+#     hodor = Character("hodor")
+# except TypeError as e:
+#     print(e)
