@@ -13,7 +13,6 @@ def projection_life(income_dataset: pd.DataFrame,
     income_1900 = income_dataset.loc[:, '1900'].tolist()
     life_expectancy_1900 = life_expectancy_dataset.loc[:, '1900'].tolist()
 
-    print(income_1900)
     plt.scatter(income_1900, life_expectancy_1900)
     plt.xlabel('Gross domestic product')
     plt.ylabel('Life expectancy')

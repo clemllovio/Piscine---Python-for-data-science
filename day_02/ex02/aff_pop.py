@@ -49,12 +49,12 @@ def aff_pop(dataset: pd.DataFrame):
 
     france_years = list(france_dataset.index)
     france_values = convert_population_data(france_dataset.values)
-    plt.plot(np.asarray(france_years, float), np.asarray(france_values, float))
+    plt.plot(np.asarray(france_years, float), france_values)
 
     belgium_years = list(belgium_dataset.index)
     belgium_values = convert_population_data(belgium_dataset.values)
     plt.plot(np.asarray(belgium_years, float),
-             np.asarray(belgium_values, float))
+             belgium_values)
 
     plt.xlim(1800, 2050)
     plt.locator_params(axis='y', nbins=4)

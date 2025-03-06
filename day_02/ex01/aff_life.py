@@ -15,7 +15,7 @@ def aff_life(dataset: pd.DataFrame):
     plt.plot(np.asarray(years, float), values)
     plt.ylabel("Life expectancy")
     plt.xlabel("Year")
-    plt.title("France life expectancy")
+    plt.title("France life expectancy Projections")
     plt.show()
 
 
